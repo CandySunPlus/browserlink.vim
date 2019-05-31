@@ -47,8 +47,8 @@ function! s:autoReload()
 endfunction
 
 function! s:setupHandlers()
-	au BufWritePost * call s:autoReload()
-	au BufWritePost *.css :BLReloadCSS
+	au FileAppendPost * call s:autoReload()
+	au FileAppendPost *.css :BLReloadCSS
 endfunction
 
 if !exists("g:bl_no_autoupdate")
@@ -58,4 +58,3 @@ endif
 if !exists("g:bl_no_eager")
 	let g:bl_no_eager = 0
 endif
-
